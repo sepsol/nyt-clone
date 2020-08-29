@@ -1,10 +1,14 @@
 const root = document.getElementById('root');
 let content;
 
-const url = 'https://services.cnn.com/newsgraph/search/';
-const api_key = '?api_key={api_key}';
+const authKey = 'HL1zkPePcTNLTnPBpcDKBpWZWsAngbnq';
+const queryTerm = 'covid';
 
-fetch(url + 'headline:"covid"' + api_key)
+const url = 'https://api.nytimes.com/svc/search/v2/articlesearch.json';
+const query = `q=${queryTerm}`;
+const apiKey = `api-key=${authKey}`;
+
+fetch(`${url}?${query}&${apiKey}`)
   .then(response => response.json())
   .then(data => console.log(data));
 

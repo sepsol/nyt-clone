@@ -13,14 +13,23 @@ const apiKey = `api-key=${authKey}`;
   const data = await response.json();
 
   content = data.response.docs.map(doc => ({
+    id: doc._id,
+    image: `https://www.nytimes.com/${doc.multimedia[0].url}`,
     headline: doc.headline.main,
-    abstract: doc.abstract
+    abstract: doc.abstract,
+    author: doc.byline.original,
+    section: doc.section_name,
+    words: doc.word_count,
+    date: doc.pub_date,
+    url: doc.web_url
   }));
+
   let li = [];
 
   for (i = 0, length = content.length; i < length; i++) {
     li = [...li, document.createElement('li')];
     li[i].innerHTML = content[i].headline;
+
     searchResults.append(li[i]);
   }
 })();

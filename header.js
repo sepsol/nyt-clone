@@ -1,13 +1,13 @@
 const header = document.querySelector('header');
 const h1 = document.querySelector('h1');
 
-window.addEventListener('scroll', () => {
-  if (window.pageYOffset > 3) {
-    header.classList.remove('header-opened');
-  } else if (window.pageYOffset === 0) {
-    header.classList.add('header-opened');
-  }
-});
+// window.addEventListener('scroll', () => {
+//   if (window.pageYOffset > 3) {
+//     header.classList.remove('header-opened');
+//   } else if (window.pageYOffset === 0) {
+//     header.classList.add('header-opened');
+//   }
+// });
 
 /*
 

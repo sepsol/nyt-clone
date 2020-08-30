@@ -53,9 +53,6 @@ header {
   justify-content: center;
   align-items: center;
 }
-h1 {
-  transition: 0.5s;
-}
 .header-closed {
   height: 7vh;
   position: fixed;
@@ -192,9 +189,6 @@ footer p {
   .header-closed {
     padding: 1em 0;
   }
-  .header-opened {
-    font-size: 2em;
-  }
   ol {
     width: 70vw;
     margin: 4em auto 1em;
@@ -215,7 +209,7 @@ footer p {
 
 @media screen and (max-width: 550px) {
   .header-opened h1 {
-    margin-bottom: 6em;
+    margin-bottom: 3em;
   }
   ol {
     width: 80vw;
@@ -224,7 +218,7 @@ footer p {
 
 @media screen and (max-width: 400px) {
   .header-opened {
-    font-size: 1.5em;
+    font-size: 2em;
   }
   ol {
     width: 90vw;

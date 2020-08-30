@@ -53,15 +53,25 @@ header {
   justify-content: center;
   align-items: center;
 }
+h1 {
+  transition: 0.5s;
+}
 .header-closed {
   height: 7vh;
   position: fixed;
   top: 0;
   left: 0;
+  padding: 0.5em 0;
+}
+.header-closed h1 {
+  margin-bottom: 0;
 }
 .header-opened {
   height: 100vh;
   font-size: 3em;
+}
+.header-opened h1 {
+  margin-bottom: 1em;
 }
 
 /* main */
@@ -200,15 +210,15 @@ footer p {
 }
 
 @media screen and (max-width: 550px) {
-  .header-opened {
-    font-size: 1.5em;
-  }
   ol {
     width: 80vw;
   }
 }
 
 @media screen and (max-width: 400px) {
+  .header-opened {
+    font-size: 1.5em;
+  }
   ol {
     width: 90vw;
   }

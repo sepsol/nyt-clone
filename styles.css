@@ -28,7 +28,7 @@ header {
   width: 100%;
   padding: 1em;
   background-color: var(--color-primary);
-  color: #ddd;
+  color: #e5e5e5;
   text-align: center;
   position: fixed;
   top: 0;
@@ -42,7 +42,7 @@ header span {
 ol {
   list-style-type: none;
   width: 50vw;
-  margin: 5em auto;
+  margin: 5em auto 1em;
 }
 
 .card {
@@ -94,4 +94,81 @@ footer p {
   text-align: center;
   font-size: 0.8em;
   color: #666;
+}
+
+/* media queries */
+@media screen and (max-width: 1700px) {
+  ol {
+    width: 60vw;
+  }
+}
+
+@media screen and (max-width: 1400px) {
+  ol {
+    width: 70vw;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  ol {
+    width: 80vw;
+  }
+}
+
+@media screen and (max-width: 1050px) {
+  ol {
+    width: 90vw;
+  }
+}
+
+@media screen and (max-width: 850px) {
+  .card {
+    grid-template-areas:
+      'date date date image'
+      'content content content image';
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .date {
+    height: 1em;
+    margin-bottom: 0.5em;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .card {
+    grid-template-areas:
+      'date date image'
+      'content content image';
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media screen and (max-width: 700px) {
+  ol {
+    width: 70vw;
+  }
+  .card {
+    grid-template-areas:
+      'date'
+      'image'
+      'content';
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3 1fr);
+  }
+  img {
+    margin: 1em 0;
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  ol {
+    width: 80vw;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  ol {
+    width: 90vw;
+  }
 }

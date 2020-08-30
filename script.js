@@ -14,21 +14,47 @@ const apiKey = `api-key=${authKey}`;
 
   content = data.response.docs.map(doc => ({
     id: doc._id,
-    image: `https://www.nytimes.com/${doc.multimedia[0].url}`,
+    image: `https://www.nytimes.com/${doc.multimedia[5].url}`,
     headline: doc.headline.main,
     abstract: doc.abstract,
     author: doc.byline.original,
     section: doc.section_name,
-    words: doc.word_count,
-    date: doc.pub_date,
+    words: doc.word_count + ' words',
+    readTime: Math.ceil(doc.word_count / 200) + ' min read time',
+    rawDate: new Date(doc.pub_date),
+    date: new Date(doc.pub_date).toLocaleDateString('en-US', {
+      month: 'long',
+      day: 'numeric'
+    }),
     url: doc.web_url
   }));
 
   let li = [];
 
   for (i = 0, length = content.length; i < length; i++) {
+    const divWrapper = document.createElement('div');
+    const divDate = document.createElement('div');
+    const divContent = document.createElement('div');
+
+    divDate.innerHTML = content[i].date;
+
+    const pSuper = document.createElement('p');
+    pSuper.innerHTML = content[i].section;
+    const h3Headline = document.createElement('h3');
+    h3Headline.innerHTML = content[i].headline;
+    const pAbstract = document.createElement('p');
+    pAbstract.innerHTML = content[i].abstract;
+    const pSub = document.createElement('p');
+    pSub.innerHTML = `${content[i].author} | ${content[i].words} | ${content[i].readTime}`;
+
+    divContent.append(pSuper, h3Headline, pAbstract, pSub);
+    const imgImage = document.createElement('img');
+    imgImage.src = content[i].image;
+
+    divWrapper.append(divDate, divContent, imgImage);
+
     li = [...li, document.createElement('li')];
-    li[i].innerHTML = content[i].headline;
+    li[i].append(divWrapper);
 
     searchResults.append(li[i]);
   }

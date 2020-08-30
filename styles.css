@@ -42,16 +42,26 @@ li {
 }
 
 /* header */
-header {
+.header-closed {
+  transition: 0.5s;
   width: 100%;
-  padding: 1em;
   box-sizing: border-box;
   background-color: var(--color-primary);
   color: #e5e5e5;
   text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: 7vh;
   position: fixed;
   top: 0;
   left: 0;
+}
+
+.header-opened {
+  height: 100vh;
+  font-size: 3em;
 }
 
 /* main */
@@ -63,7 +73,7 @@ main a {
 ol {
   list-style-type: none;
   width: 50vw;
-  margin: 5em auto 1em;
+  margin: 6em auto 1em;
 }
 
 .card {

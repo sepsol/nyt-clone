@@ -73,6 +73,8 @@ const apiKey = `api-key=${authKey}`;
     pAbstract.className = 'abstract';
     pSub.className = 'sub';
   }
+
+  setTimeout(() => header.classList.remove('header-opened'), 100);
 })();
 
 /* 

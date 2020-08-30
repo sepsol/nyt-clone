@@ -32,12 +32,6 @@ const apiKey = `api-key=${authKey}`;
   let li = [];
 
   for (i = 0, length = content.length; i < length; i++) {
-    const divCard = document.createElement('div');
-    const divDate = document.createElement('div');
-    const divContent = document.createElement('div');
-
-    divDate.innerHTML = content[i].date;
-
     const pSuper = document.createElement('p');
     pSuper.innerHTML = content[i].section;
     const h3Headline = document.createElement('h3');
@@ -50,11 +44,20 @@ const apiKey = `api-key=${authKey}`;
     const imgImage = document.createElement('img');
     imgImage.src = content[i].image;
 
+    const divDate = document.createElement('div');
+    divDate.innerHTML = content[i].date;
+    const divContent = document.createElement('div');
     divContent.append(pSuper, h3Headline, pAbstract, pSub);
+    const divCard = document.createElement('div');
     divCard.append(divDate, divContent, imgImage);
 
+    const aLink = document.createElement('a');
+    aLink.href = content[i].url;
+    aLink.setAttribute('target', '_blank');
+    aLink.append(divCard);
+
     li = [...li, document.createElement('li')];
-    li[i].append(divCard);
+    li[i].append(aLink);
 
     searchResults.append(li[i]);
 

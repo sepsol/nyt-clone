@@ -23,6 +23,24 @@ li {
   padding: 0;
 }
 
+*::selection {
+  background-color: var(--color-primary);
+  color: #fff;
+}
+
+.no-select {
+  /* prevent blue highlighting */
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  /* prevent text selection */
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  /* for chrome on android */
+  -webkit-tap-highlight-color: transparent;
+}
+
 /* header */
 header {
   width: 100%;
@@ -37,6 +55,11 @@ header {
 }
 
 /* main */
+main a {
+  text-decoration: none;
+  color: #111;
+}
+
 ol {
   list-style-type: none;
   width: 50vw;

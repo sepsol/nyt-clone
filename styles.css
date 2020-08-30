@@ -17,3 +17,36 @@ p,
 li {
   font-family: 'Lato', sans-serif;
 }
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+ol {
+  list-style-type: none;
+  width: 90vw;
+  margin: 5em auto;
+}
+
+.card {
+  width: 100%;
+  display: grid;
+  grid-template-areas: 'date content content image';
+  grid-template-columns: repeat(4, 1fr);
+  padding: 1.5em 0;
+  border-top: 1px solid #ccc;
+}
+li:last-child > .card {
+  border-bottom: 1px solid #ccc;
+}
+
+.date {
+  grid-area: date;
+}
+.content {
+  grid-area: content;
+}
+img {
+  grid-area: image;
+}

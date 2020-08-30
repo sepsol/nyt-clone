@@ -32,7 +32,7 @@ const apiKey = `api-key=${authKey}`;
   let li = [];
 
   for (i = 0, length = content.length; i < length; i++) {
-    const divWrapper = document.createElement('div');
+    const divCard = document.createElement('div');
     const divDate = document.createElement('div');
     const divContent = document.createElement('div');
 
@@ -47,16 +47,26 @@ const apiKey = `api-key=${authKey}`;
     const pSub = document.createElement('p');
     pSub.innerHTML = `${content[i].author} | ${content[i].words} | ${content[i].readTime}`;
 
-    divContent.append(pSuper, h3Headline, pAbstract, pSub);
     const imgImage = document.createElement('img');
     imgImage.src = content[i].image;
 
-    divWrapper.append(divDate, divContent, imgImage);
+    divContent.append(pSuper, h3Headline, pAbstract, pSub);
+    divCard.append(divDate, divContent, imgImage);
 
     li = [...li, document.createElement('li')];
-    li[i].append(divWrapper);
+    li[i].append(divCard);
 
     searchResults.append(li[i]);
+
+    // CLASSES
+    divCard.className = 'card';
+    divDate.className = 'date';
+    divContent.className = 'content';
+
+    pSuper.className = 'super';
+    h3Headline.className = 'headline';
+    pAbstract.className = 'abstract';
+    pSub.className = 'sub';
   }
 })();
 

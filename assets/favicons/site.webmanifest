@@ -1,6 +1,6 @@
 {
   "name": "New York Times - COVID-19 Edition",
-  "short_name": "A clone of New York Times news agency to filter only the latest COVID-19 news.",
+  "short_name": "A clone of New York Times website to filter only the latest COVID-19 news.",
   "icons": [
     {
       "src": "/android-chrome-192x192.png",

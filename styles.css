@@ -27,15 +27,13 @@ li {
 header {
   width: 100%;
   padding: 1em;
+  box-sizing: border-box;
   background-color: var(--color-primary);
   color: #e5e5e5;
   text-align: center;
   position: fixed;
   top: 0;
   left: 0;
-}
-header span {
-  font-size: 0.7em;
 }
 
 /* main */

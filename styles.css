@@ -88,12 +88,13 @@ img {
 
 /* footer */
 footer {
-  padding: 4em;
+  padding: 3em 0;
 }
 footer p {
   text-align: center;
   font-size: 0.8em;
   color: #666;
+  margin-bottom: 0.3em;
 }
 
 /* media queries */

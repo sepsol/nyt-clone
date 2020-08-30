@@ -58,7 +58,6 @@ header {
   position: fixed;
   top: 0;
   left: 0;
-  padding: 0.5em 0;
 }
 .header-closed h1 {
   margin-bottom: 0;
@@ -69,6 +68,9 @@ header {
 }
 .header-opened h1 {
   margin-bottom: 0.8em;
+}
+h1 {
+  padding: 0.5em 0;
 }
 
 /* main */

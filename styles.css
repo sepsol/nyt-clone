@@ -42,7 +42,7 @@ header span {
 ol {
   list-style-type: none;
   width: 50vw;
-  margin: 5em auto 1em;
+  margin: 6em auto 1em;
 }
 
 .card {
@@ -51,11 +51,11 @@ ol {
   grid-template-areas: 'date content content image';
   grid-template-columns: repeat(4, 1fr);
   padding: 1.5em 0;
-  border-top: 1px solid #ccc;
-}
-li:last-child > .card {
   border-bottom: 1px solid #ccc;
 }
+/* li:first-child > .card {
+  border-top: 1px solid #ccc;
+} */
 
 .date {
   grid-area: date;

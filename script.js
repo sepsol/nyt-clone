@@ -54,6 +54,8 @@ const apiKey = `api-key=${authKey}`;
     const aLink = document.createElement('a');
     aLink.href = content[i].url;
     aLink.setAttribute('target', '_blank');
+    aLink.setAttribute('rel', 'noopener noreferrer');
+    aLink.className = 'no-select';
     aLink.append(divCard);
 
     li = [...li, document.createElement('li')];

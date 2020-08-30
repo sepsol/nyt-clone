@@ -23,9 +23,25 @@ li {
   padding: 0;
 }
 
+/* header */
+header {
+  width: 100%;
+  padding: 1em;
+  background-color: var(--color-primary);
+  color: #ddd;
+  text-align: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+header span {
+  font-size: 0.7em;
+}
+
+/* main */
 ol {
   list-style-type: none;
-  width: 90vw;
+  width: 50vw;
   margin: 5em auto;
 }
 
@@ -43,10 +59,39 @@ li:last-child > .card {
 
 .date {
   grid-area: date;
+  color: #666;
+  font-size: 0.8em;
 }
 .content {
   grid-area: content;
 }
 img {
   grid-area: image;
+  margin-left: 3em;
+  border-radius: 0.3em;
+}
+
+.super {
+  font-size: 1em;
+  color: #555;
+  margin-bottom: 1em;
+}
+.headline {
+  margin-bottom: 0.5em;
+  color: #222;
+}
+.sub {
+  font-size: 0.8em;
+  color: #666;
+  margin-top: 2em;
+}
+
+/* footer */
+footer {
+  padding: 4em;
+}
+footer p {
+  text-align: center;
+  font-size: 0.8em;
+  color: #666;
 }

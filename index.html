@@ -38,12 +38,24 @@
   </head>
   <body>
     <header>
-      <h1>Covid News</h1>
+      <h1>COVID-19 News</h1>
     </header>
     <main>
       <ol id="search-results"></ol>
     </main>
-    <footer></footer>
+    <footer>
+      <p>
+        Built with ♥ by sepsol ‌ | ‌
+        <a href="https://sepsol.github.io/">View my other work</a>
+      </p>
+      <p>&copy; <span id="thisYear"></span> New York Times Company</p>
+      <script>
+        document.getElementById(
+          'thisYear'
+        ).innerHTML = new Date().getFullYear();
+      </script>
+    </footer>
+
     <script src="script.js"></script>
   </body>
 </html>

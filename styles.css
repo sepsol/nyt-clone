@@ -121,9 +121,15 @@ button#scroll-down {
   cursor: pointer;
   position: absolute;
   bottom: 7vh;
+  transition: none;
 }
 #scroll-down img {
   padding-top: 0.7em;
+  transition: none;
+}
+.hide-scroll-btn {
+  /* display: none; */
+  visibility: hidden;
 }
 
 /* main */

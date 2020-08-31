@@ -1,5 +1,6 @@
 const searchForm = document.getElementById('search-form');
 const searchBox = document.getElementById('search-box');
+const scrollDown = document.getElementById('scroll-down');
 const searchResults = document.getElementById('search-results');
 
 const url = 'https://api.nytimes.com/svc/search/v2/articlesearch.json';
@@ -10,6 +11,7 @@ let content = [];
 
 // DEFAULT QUERY
 async function doQuery(queryTerm) {
+  scrollDown.classList.add('hide-scroll-btn');
   let query = `q=${queryTerm}`;
 
   const response = await fetch(`${url}?${query}&${apiKey}`);
@@ -79,19 +81,19 @@ async function doQuery(queryTerm) {
     pSub.className = 'sub';
   }
 
-  // setTimeout(() => header.classList.remove('header-opened'), 100);
+  setTimeout(() => scrollDown.classList.remove('hide-scroll-btn'), 50);
 }
 
 doQuery('covid');
 
 // USER QUERY
-function doSearch(e) {
+async function doSearch(e) {
   e.preventDefault();
-
   while (searchResults.firstChild) {
     searchResults.removeChild(searchResults.firstChild);
   }
-  doQuery(searchBox.value);
+  await doQuery(searchBox.value);
+  setTimeout(window.scrollBy({ top: 5 }), 300);
 }
 
 searchForm.addEventListener('submit', doSearch);

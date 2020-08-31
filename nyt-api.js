@@ -2,9 +2,9 @@ const searchForm = document.getElementById('search-form');
 const searchBox = document.getElementById('search-box');
 const searchResults = document.getElementById('search-results');
 
+const url = 'https://api.nytimes.com/svc/search/v2/articlesearch.json';
 const authKey = 'HL1zkPePcTNLTnPBpcDKBpWZWsAngbnq';
 const apiKey = `api-key=${authKey}`;
-const url = 'https://api.nytimes.com/svc/search/v2/articlesearch.json';
 
 let content = [];
 
@@ -19,7 +19,7 @@ async function doQuery(queryTerm) {
     id: doc._id,
     image: doc.multimedia[5]
       ? `https://www.nytimes.com/${doc.multimedia[5].url}`
-      : './assets/placeholder.jpg',
+      : 'https://raw.githubusercontent.com/sepsol/covid-news/gh-pages/assets/placeholder.jpg',
     headline: doc.headline.main,
     abstract: doc.abstract,
     author: doc.byline.original,
@@ -34,7 +34,6 @@ async function doQuery(queryTerm) {
     url: doc.web_url
   }));
 
-  // content = [...newContent];
   let li = [];
 
   for (i = 0, length = content.length; i < length; i++) {
@@ -88,6 +87,10 @@ doQuery('covid');
 // USER QUERY
 function doSearch(e) {
   e.preventDefault();
+
+  while (searchResults.firstChild) {
+    searchResults.removeChild(searchResults.firstChild);
+  }
   doQuery(searchBox.value);
 }
 

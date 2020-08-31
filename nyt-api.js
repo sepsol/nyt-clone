@@ -17,7 +17,9 @@ async function doQuery(queryTerm) {
 
   content = data.response.docs.map(doc => ({
     id: doc._id,
-    image: `https://www.nytimes.com/${doc.multimedia[5].url}`,
+    image: doc.multimedia[5]
+      ? `https://www.nytimes.com/${doc.multimedia[5].url}`
+      : './assets/placeholder.jpg',
     headline: doc.headline.main,
     abstract: doc.abstract,
     author: doc.byline.original,

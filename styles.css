@@ -73,6 +73,7 @@ h1 {
 .header-opened {
   height: 100vh;
   font-size: 3em;
+  padding-bottom: 3.8em;
 }
 .header-opened h1 {
   margin-bottom: 0.8em;
@@ -122,9 +123,10 @@ button#scroll-down {
   position: absolute;
   bottom: 7vh;
   transition: none;
+  width: 75px;
 }
 #scroll-down img {
-  padding-top: 0.7em;
+  padding-top: 0.8em;
   transition: none;
 }
 .hide-scroll-btn {
@@ -259,7 +261,7 @@ footer p {
     grid-template-columns: 1fr;
     grid-template-rows: repeat(3 1fr);
   }
-  img {
+  main img {
     margin: 1em 0;
     width: 100%;
   }

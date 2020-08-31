@@ -15,7 +15,7 @@ async function doQuery(queryTerm) {
   const response = await fetch(`${url}?${query}&${apiKey}`);
   const data = await response.json();
 
-  let newContent = data.response.docs.map(doc => ({
+  content = data.response.docs.map(doc => ({
     id: doc._id,
     image: `https://www.nytimes.com/${doc.multimedia[5].url}`,
     headline: doc.headline.main,
@@ -32,7 +32,7 @@ async function doQuery(queryTerm) {
     url: doc.web_url
   }));
 
-  content = [...newContent];
+  // content = [...newContent];
   let li = [];
 
   for (i = 0, length = content.length; i < length; i++) {

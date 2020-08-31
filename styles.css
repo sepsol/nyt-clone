@@ -50,8 +50,12 @@ header {
   color: #e5e5e5;
   text-align: center;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+h1 {
+  padding: 0.5em 0;
 }
 .header-closed {
   height: 7vh;
@@ -62,6 +66,10 @@ header {
 .header-closed h1 {
   margin-bottom: 0;
 }
+.header-closed input {
+  visibility: hidden;
+  display: none;
+}
 .header-opened {
   height: 100vh;
   font-size: 3em;
@@ -69,8 +77,21 @@ header {
 .header-opened h1 {
   margin-bottom: 0.8em;
 }
-h1 {
-  padding: 0.5em 0;
+.header-opened input {
+  visibility: initial;
+  display: initial;
+}
+
+input#search-box {
+  width: 8em;
+  height: 5vh;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  border-bottom: 5px #eee solid;
+  font-size: 1em;
+  padding: 0.2em;
+  color: #fff;
 }
 
 /* main */

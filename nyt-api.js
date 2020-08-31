@@ -1,18 +1,21 @@
+const searchForm = document.getElementById('search-form');
+const searchBox = document.getElementById('search-box');
 const searchResults = document.getElementById('search-results');
-let content = [];
 
 const authKey = 'HL1zkPePcTNLTnPBpcDKBpWZWsAngbnq';
-const queryTerm = 'covid';
-
-const url = 'https://api.nytimes.com/svc/search/v2/articlesearch.json';
-const query = `q=${queryTerm}`;
 const apiKey = `api-key=${authKey}`;
+const url = 'https://api.nytimes.com/svc/search/v2/articlesearch.json';
 
-(async function getData() {
+let content = [];
+
+// DEFAULT QUERY
+async function doQuery(queryTerm) {
+  let query = `q=${queryTerm}`;
+
   const response = await fetch(`${url}?${query}&${apiKey}`);
   const data = await response.json();
 
-  content = data.response.docs.map(doc => ({
+  let newContent = data.response.docs.map(doc => ({
     id: doc._id,
     image: `https://www.nytimes.com/${doc.multimedia[5].url}`,
     headline: doc.headline.main,
@@ -29,6 +32,7 @@ const apiKey = `api-key=${authKey}`;
     url: doc.web_url
   }));
 
+  content = [...newContent];
   let li = [];
 
   for (i = 0, length = content.length; i < length; i++) {
@@ -74,8 +78,18 @@ const apiKey = `api-key=${authKey}`;
     pSub.className = 'sub';
   }
 
-  setTimeout(() => header.classList.remove('header-opened'), 100);
-})();
+  // setTimeout(() => header.classList.remove('header-opened'), 100);
+}
+
+doQuery('covid');
+
+// USER QUERY
+function doSearch(e) {
+  e.preventDefault();
+  doQuery(searchBox.value);
+}
+
+searchForm.addEventListener('submit', doSearch);
 
 /* 
 

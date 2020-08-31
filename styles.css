@@ -91,9 +91,8 @@ form {
   border-bottom: 5px #eee solid;
   padding-bottom: 0.2em;
 }
-form input,
-form button {
-  height: 3vh;
+input,
+button {
   background-color: transparent;
   border: none;
   outline: none;
@@ -109,8 +108,22 @@ form button {
   height: 100%;
   cursor: pointer;
 }
-form button img {
+button img {
   margin: 0;
+}
+
+button#scroll-down {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #eee;
+  cursor: pointer;
+  position: absolute;
+  bottom: 7vh;
+}
+#scroll-down img {
+  padding-top: 0.7em;
 }
 
 /* main */

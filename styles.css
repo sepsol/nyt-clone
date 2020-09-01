@@ -260,6 +260,9 @@ footer p {
   .header-opened h1 {
     margin-bottom: 0.5em;
   }
+  .header-opened-onfocus-mobile h1 {
+    margin: 0;
+  }
   button#scroll-down {
     bottom: 20vh;
   }

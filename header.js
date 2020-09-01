@@ -1,6 +1,7 @@
 const header = document.querySelector('header');
 const h1 = document.querySelector('h1');
 
+// auto-opening and closing of the header section
 window.addEventListener('scroll', () => {
   if (window.pageYOffset > 3 && document.activeElement !== searchBox) {
     header.classList.remove('header-opened');
@@ -9,9 +10,13 @@ window.addEventListener('scroll', () => {
   }
 });
 
-// to prevent header from collapsing while searchBox is in focus
-// searchBox.onfocus = header.classList.add('header-opened');
-// searchBox.onfocus = header.classList.remove('header-closed');
+// to remove the margin under the h1 on mobile to accomodate for keyboard
+searchBox.addEventListener('focus', () =>
+  header.classList.add('header-opened-onfocus-mobile')
+);
+searchBox.addEventListener('blur', () =>
+  header.classList.remove('header-opened-onfocus-mobile')
+);
 
 /*
 

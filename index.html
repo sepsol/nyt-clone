@@ -38,10 +38,10 @@
   </head>
   <body>
     <header class="header-closed header-opened">
-      <h1>New York Times</h1>
+      <h1 class="no-select">New York Times</h1>
       <form id="search-form">
         <input id="search-box" type="text" placeholder="Search" />
-        <button type="submit">
+        <button type="submit" class="no-select">
           <img
             src="https://raw.githubusercontent.com/sepsol/nyt-clone/gh-pages/assets/iconmonstr-magnifier-2-32.png"
             width="100%"
@@ -50,8 +50,8 @@
       </form>
       <button
         id="scroll-down"
-        class="hide-scroll-btn"
-        onclick="window.scrollBy({top: 5})"
+        class="hide-scroll-btn no-select"
+        onclick="window.scrollBy({top: 3})"
       >
         scroll down<img
           src="https://raw.githubusercontent.com/sepsol/nyt-clone/gh-pages/assets/iconmonstr-arrow-69-32.png"

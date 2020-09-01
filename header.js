@@ -2,12 +2,16 @@ const header = document.querySelector('header');
 const h1 = document.querySelector('h1');
 
 window.addEventListener('scroll', () => {
-  if (window.pageYOffset > 3) {
+  if (window.pageYOffset > 3 && document.activeElement !== searchBox) {
     header.classList.remove('header-opened');
   } else if (window.pageYOffset === 0) {
     header.classList.add('header-opened');
   }
 });
+
+// to prevent header from collapsing while searchBox is in focus
+// searchBox.onfocus = header.classList.add('header-opened');
+// searchBox.onfocus = header.classList.remove('header-closed');
 
 /*
 

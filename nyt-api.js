@@ -93,7 +93,7 @@ async function doSearch(e) {
     searchResults.removeChild(searchResults.firstChild);
   }
   await doQuery(searchBox.value);
-  setTimeout(window.scrollBy({ top: 5 }), 300);
+  setTimeout(window.scrollTo({ top: 3 }), 300);
 }
 
 searchForm.addEventListener('submit', doSearch);

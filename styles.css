@@ -127,16 +127,15 @@ button#scroll-down {
   cursor: pointer;
   position: absolute;
   bottom: 7vh;
-  transition: none;
   width: 75px;
 }
 #scroll-down img {
   padding-top: 0.8em;
-  transition: none;
 }
 .hide-scroll-btn {
   /* display: none; */
   visibility: hidden;
+  /* opacity: 0; */
 }
 
 /* main */
@@ -258,10 +257,17 @@ footer p {
     padding-bottom: 7em;
   }
   .header-opened h1 {
+    transition: margin-bottom 0.3s;
     margin-bottom: 0.5em;
   }
   .header-opened-onfocus-mobile h1 {
-    margin: 0;
+    margin-bottom: 0.2em;
+  }
+  .header-opened-onfocus-mobile {
+    padding-bottom: 2em;
+  }
+  .header-opened-onfocus-mobile #scroll-down {
+    visibility: hidden;
   }
   button#scroll-down {
     bottom: 20vh;
